@@ -1,0 +1,18 @@
+substitutions:
+  name: "bluetooth-proxy-9dd300"
+  friendly_name: Bluetooth Proxy 9dd300
+  board: esp32dev
+
+packages:
+  bt-proxy: !include modules/devices/bt-proxy.yaml
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+
+# Enable logging
+logger:
+  #level: DEBUG
+  #level: VERBOSE
+  level: VERY_VERBOSE
+  

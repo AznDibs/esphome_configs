@@ -1,0 +1,26 @@
+# Bluetooth proxy using an ESP32 Wroom with BLE and Wifi
+
+substitutions:
+  name: "bluetooth-proxy"
+  friendly_name: Bluetooth Proxy
+  board: esp32dev
+
+packages:
+  common: !include ../common-32-esp-idf.yaml
+  wifi: !include ../common/wifi.yaml
+  captive_portal: !include ../common/captive_portal.yaml
+
+esphome:
+  # name: from common-base.yaml
+  # friendly_name: from common-base.yaml
+  name_add_mac_suffix: true
+  
+esp32_ble_tracker:
+  scan_parameters:
+    # We currently use the defaults to ensure Bluetooth
+    # can co-exist with WiFi In the future we may be able to
+    # enable the built-in coexistence logic in ESP-IDF
+    active: true
+
+bluetooth_proxy:
+  active: true

@@ -1,0 +1,4 @@
+---
+platform: status
+name: "Node Status"
+id: system_status
