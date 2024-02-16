@@ -4,5 +4,3 @@ substitutions:
 
 api:
   reboot_timeout: $api_timeout
-  encryption:
-    key: !secret api_key
