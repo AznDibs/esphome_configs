@@ -4,3 +4,4 @@ substitutions:
 
 api:
   reboot_timeout: $api_timeout
+  key:

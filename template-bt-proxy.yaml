@@ -1,0 +1,79 @@
+substitutions:
+  name: "bt-proxy"
+  friendly_name: Bluetooth Proxy
+  board: esp32dev
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  name_add_mac_suffix: true
+  platform: ESP32
+  board: ${board}
+  project:
+    name: esphome.bt-proxy
+    version: "1.0"
+
+# Enable logging
+logger:
+  #level: DEBUG
+  #level: VERBOSE
+  level: VERY_VERBOSE
+
+##########################################################
+#### REPLACE THIS SECTION WITH YOUR OWN CONFIGURATION ####
+##########################################################
+api:
+  encryption:
+    key:
+
+ota:
+  password:
+##########################################################
+##########################################################
+##########################################################
+
+
+
+# wifi component
+wifi:
+  fast_connect: true
+#########################################################################
+#### ADD YOUR WIFI COMPONENT HERE, KEEP FAST_CONNECT FOR HIDDEN SSID ####
+#########################################################################
+
+
+
+# captive portal
+captive_portal:
+
+dashboard_import:
+  package_import_url: github://AznDibs/esphome_configs/template-bt-proxy.yaml@main
+
+# ble component
+esp32_ble_tracker:
+  scan_parameters:
+    # We currently use the defaults to ensure Bluetooth
+    # can co-exist with WiFi In the future we may be able to
+    # enable the built-in coexistence logic in ESP-IDF
+    active: true
+
+bluetooth_proxy:
+  active: true
+
+
+
+# sensors component
+sensor:
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+    id: wifi_signal_sensor
+  - platform: uptime
+    name: "Uptime"
+    id: uptime_sensor
+
+# binary sensors component
+binary_sensor:
+  - platform: status
+    name: "Node Status"
+    id: system_status
