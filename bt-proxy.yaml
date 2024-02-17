@@ -2,12 +2,10 @@
 
 substitutions:
   name: "bt-proxy"
-  friendly_name: Bluetooth Proxy
   board: esp32dev
 
 esphome:
   name: ${name}
-  friendly_name: ${friendly_name}
   name_add_mac_suffix: true
   project:
     name: esphome.bt-proxy
@@ -49,11 +47,7 @@ wifi:
 #########################################################################
 #### ADD YOUR WIFI COMPONENT HERE, KEEP FAST_CONNECT FOR HIDDEN SSID ####
 #########################################################################
-
-
-
-# captive portal
-captive_portal:
+improv_serial:
 
 dashboard_import:
   package_import_url: github://AznDibs/esphome_configs/bt-proxy.yaml@main
@@ -87,3 +81,8 @@ binary_sensor:
   - platform: status
     name: "Node Status"
     id: system_status
+
+button:
+  - platform: safe_mode
+    name: Safe Mode Boot
+    entity_category: diagnostic
