@@ -15,6 +15,11 @@ esphome:
     name: esphome.bt-proxy
     version: "1.0"
 
+esp32:
+  board: ${board}
+  framework:
+    type: esp-idf
+
 # Enable logging
 logger:
   #level: DEBUG
