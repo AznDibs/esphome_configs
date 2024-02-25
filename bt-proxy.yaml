@@ -1,14 +1,19 @@
 # Bluetooth proxy using an ESP32 Wroom with BLE and Wifi
 
+
+
 substitutions:
   name: "bt-proxy"
+
+  project_name: azndibs.btproxy
+  project_ver: "1.1"
 
 esphome:
   name: ${name}
   name_add_mac_suffix: true
   project:
-    name: esphome.bt-proxy
-    version: "1.0"
+    name: ${project_name}
+    version: ${project_ver}
 
 esp32:
   board: esp32dev
@@ -21,17 +26,12 @@ logger:
   #level: VERBOSE
   level: VERY_VERBOSE
 
-##########################################################
-#### REPLACE THIS SECTION WITH YOUR OWN CONFIGURATION ####
-##########################################################
+
 api:
   encryption:
     key: !secret api_key
 ota:
   password: !secret ota_password
-##########################################################
-##########################################################
-##########################################################
 
 
 
@@ -48,9 +48,11 @@ wifi:
 #########################################################################
 improv_serial:
 
+captive_portal:
+
 dashboard_import:
   package_import_url: github://AznDibs/esphome_configs/bt-proxy.yaml@main
-  import_full_config: true
+  import_full_config: false
 
 # ble component
 esp32_ble_tracker:
