@@ -18,3 +18,4 @@ builds/
 /scratchbox/
 /dev/
 .git.bak
+/localbuild

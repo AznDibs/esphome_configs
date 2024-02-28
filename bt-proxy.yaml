@@ -37,11 +37,8 @@ ota:
 # wifi component
 wifi:
   fast_connect: true
-  ssid:
-  password:
   ap:
     ssid: "Bluetooth-Proxy Fallback Hotspot"
-    password:
 #########################################################################
 #### ADD YOUR WIFI COMPONENT HERE, KEEP FAST_CONNECT FOR HIDDEN SSID ####
 #########################################################################
