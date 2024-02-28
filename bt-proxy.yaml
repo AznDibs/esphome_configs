@@ -28,21 +28,20 @@ logger:
 
 
 api:
-  encryption:
-    key: !secret api_key
+
+
 ota:
-  password: !secret ota_password
 
 
 
 # wifi component
 wifi:
   fast_connect: true
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  ssid:
+  password:
   ap:
     ssid: "Bluetooth-Proxy Fallback Hotspot"
-    password: !secret ap_password
+    password:
 #########################################################################
 #### ADD YOUR WIFI COMPONENT HERE, KEEP FAST_CONNECT FOR HIDDEN SSID ####
 #########################################################################
