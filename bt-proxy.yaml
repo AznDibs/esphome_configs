@@ -6,7 +6,7 @@ substitutions:
   name: "bt-proxy"
 
   project_name: azndibs.btproxy
-  project_ver: "1.1"
+  project_ver: "1.1.2"
 
 esphome:
   name: ${name}
@@ -60,7 +60,7 @@ esp32_ble_tracker:
     # We currently use the defaults to ensure Bluetooth
     # can co-exist with WiFi In the future we may be able to
     # enable the built-in coexistence logic in ESP-IDF
-    active: true
+    active: false
 
 bluetooth_proxy:
   active: true
@@ -86,4 +86,8 @@ binary_sensor:
 button:
   - platform: safe_mode
     name: Safe Mode Boot
+    entity_category: diagnostic
+
+  - platform: restart
+    name: "Restart"
     entity_category: diagnostic
