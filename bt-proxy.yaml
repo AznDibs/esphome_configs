@@ -6,7 +6,7 @@ substitutions:
   name: "bt-proxy"
 
   project_name: azndibs.btproxy
-  project_ver: "1.1.2"
+  project_ver: "1.1.3"
 
 esphome:
   name: ${name}
@@ -72,6 +72,13 @@ sensor:
   - platform: uptime
     name: "Uptime"
     id: uptime_sensor
+
+# text sensors component
+text_sensor:
+  - name: "Project Version"
+    id: project_version
+    icon: "mdi:package-variant-closed"
+    state: ${project_ver}
 
 # binary sensors component
 binary_sensor:
