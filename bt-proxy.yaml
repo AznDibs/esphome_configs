@@ -78,7 +78,7 @@ text_sensor:
   - platform: template
     name: "Project Version"
     lambda: |-
-      return to_string($project_ver);
+      return to_string("$project_ver");
 
 # binary sensors component
 binary_sensor:
