@@ -75,10 +75,10 @@ sensor:
 
 # text sensors component
 text_sensor:
-  - name: "Project Version"
-    id: project_version
-    icon: "mdi:package-variant-closed"
-    state: ${project_ver}
+  - platform: template
+    name: "Project Version"
+    lambda: |-
+      return $project_ver;
 
 # binary sensors component
 binary_sensor:
