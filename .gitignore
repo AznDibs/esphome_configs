@@ -19,3 +19,4 @@ builds/
 /dev/
 .git.bak
 /localbuild
+.devcontainer/
