@@ -39,9 +39,7 @@ wifi:
   fast_connect: true
   ap:
     ssid: "Bluetooth-Proxy Fallback Hotspot"
-#########################################################################
-#### ADD YOUR WIFI COMPONENT HERE, KEEP FAST_CONNECT FOR HIDDEN SSID ####
-#########################################################################
+
 improv_serial:
 
 captive_portal:
@@ -56,7 +54,9 @@ esp32_ble_tracker:
     # We currently use the defaults to ensure Bluetooth
     # can co-exist with WiFi In the future we may be able to
     # enable the built-in coexistence logic in ESP-IDF
-    active: false
+    interval: 1000ms
+    window: 900ms
+    active: true
 
 bluetooth_proxy:
   active: true
